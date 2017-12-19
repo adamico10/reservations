@@ -13,20 +13,17 @@ var claimReservation = function () {
   var nameInput = document.getElementById("nameInput").value;  
   var nameInput = nameInput[0].toUpperCase() + nameInput.slice(1).toLowerCase();
   
-  while (reservations[nameInput]) {
-    if (reservations[nameInput].claimed) {
+  if (reservations[nameInput] && reservations[nameInput].claimed) {
       alert("Welcome To The Restaurant")
-      return
         ;
-    }
-    else {
+    } else if(reservations[nameInput] && !reservations[nameInput].claimed) {
       alert("Your reservation has been used")
-      return
         ;
     }
-  }
+  else {
   alert("You just got a new reservation")
   reservations[nameInput] = { claimed: true }
   document.getElementById("yourname").innerHTML += "<br>" + nameInput;
+}
 }
 
