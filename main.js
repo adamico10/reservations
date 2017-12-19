@@ -3,23 +3,30 @@ var reservations = {
   'Ted': { claimed: true }
 }
 
-
-var name = prompt('Please enter the name for your reservation');
-var name = name[0].toUpperCase() + name.slice(1).toLowerCase();
+/*
+var name = document.getElementById("nameInput");
+var nameInput = nameInput[0].toUpperCase() + nameInput.slice(1).toLowerCase();
+document.getElementById("yourname").innerHTML = nameInput
+*/
 
 var claimReservation = function () {
-  while (reservations[name]) {
-    if (reservations[name].claimed) {
+  var nameInput = document.getElementById("nameInput").value;  
+  var nameInput = nameInput[0].toUpperCase() + nameInput.slice(1).toLowerCase();
+  
+  while (reservations[nameInput]) {
+    if (reservations[nameInput].claimed) {
       alert("Welcome To The Restaurant")
-      return;
+      return
+        ;
     }
     else {
       alert("Your reservation has been used")
-      return;
+      return
+        ;
     }
   }
   alert("You just got a new reservation")
-  reservations.push({x:name , { claimed: true }})
-  }
+  reservations[nameInput] = { claimed: true }
+  document.getElementById("yourname").innerHTML = nameInput;
+}
 
-      claimReservation();
