@@ -18,7 +18,8 @@ var claimReservation = function () {
       return;
     }
   }
-  alert("You don't have a reservation")  
-  return;
+  alert("You just got a new reservation")
+  reservations.push({x:name , { claimed: true }})
   }
+
       claimReservation();
