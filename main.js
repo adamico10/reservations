@@ -27,6 +27,6 @@ var claimReservation = function () {
   }
   alert("You just got a new reservation")
   reservations[nameInput] = { claimed: true }
-  document.getElementById("yourname").innerHTML = nameInput;
+  document.getElementById("yourname").innerHTML += "<br>" + nameInput;
 }
 
