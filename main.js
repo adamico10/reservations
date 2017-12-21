@@ -18,6 +18,56 @@ document.getElementById("yourname").innerHTML = nameInput
 // class
 // 
 /*
+var reservations = {
+   'Bob': { claimed: false },
+   'Ted': { claimed: true },
+   
+};
+
+function findClient(clientName) {
+   for (var name in reservations) {
+       if (name.toLowerCase() == clientName.toLowerCase()) {
+           return reservations[name];
+       }
+   }
+   return null;
+}
+
+var claimReservation = function (clientName) {
+   
+   var reservation = findClient(clientName);
+
+   if (reservation == null) {
+       reservations[clientName] = { claimed: true };
+       console.log("We've added your reservation " + clientName);
+   }
+   else {
+       if (reservation.claimed === false) {
+           console.log("Welcome!");
+           console.log("Your table is ready " + clientName);
+       } else {
+           console.log("your friends are waiting");
+           console.log("Table has been claimed for " + clientName);
+       }
+   }
+}
+
+claimReservation("ted");
+
+
+////////// my comments during class
+////////// think about when you are trying to delete/modify reservations etc.
+
+
+
+
+
+
+
+
+
+
+
 function findClient(clientName) {
   for(var name in reservations) {
     if(name.toLowerCase() == clientName.toLowerCase()) {
